@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const binarystream_dep = b.dependency("BinaryStream", .{
-	.target = target,
+        .target = target,
         .optimize = optimize,
     });
 
@@ -14,7 +14,6 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-
     mod.addImport("BinaryStream", binarystream_dep.module("BinaryStream"));
 
     const mod_tests = b.addTest(.{
